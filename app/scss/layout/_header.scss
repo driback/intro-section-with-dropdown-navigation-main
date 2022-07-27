@@ -1,0 +1,85 @@
+@use "../util" as u;
+
+.header {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1rem;
+
+  a {
+    color: u.$mediumgray;
+    font-weight: 500;
+
+    &:hover {
+      color: u.$almostblack;
+    }
+  }
+
+  &__logo {
+    display: block;
+    max-height: 100%;
+  }
+
+  &__btn {
+    display: block;
+  }
+
+  &__nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+
+    width: 65%;
+    height: 100vh;
+    background-color: u.$almostwhite;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
+    z-index: 1;
+
+    transition: transform 150ms ease-in;
+  }
+
+  &__closebtn {
+    margin-inline-start: auto;
+  }
+
+  &__links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+
+    // > li {
+    //   // padding-right: 5rem;
+    // }
+  }
+
+  &__login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 1.75rem;
+    width: 100%;
+
+    > li:last-child {
+      border: 2px solid u.$mediumgray;
+      padding: 0.75rem;
+      border-radius: 1rem;
+      text-align: center;
+      width: 100%;
+
+      &:hover {
+        border: 2px solid u.$almostblack;
+        a {
+          color: u.$almostblack;
+        }
+      }
+    }
+  }
+}

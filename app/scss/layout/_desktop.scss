@@ -1,0 +1,30 @@
+@use "../util/" as u;
+
+.header {
+  @include u.breakpoint(desktop) {
+    &__links,
+    &__login {
+      font-size: 1rem;
+    }
+  }
+}
+.main {
+  @include u.breakpoint(desktop) {
+    grid-template-rows: repeat(2, minmax(100px, 320px));
+    &__article {
+      margin-top: 7rem;
+    }
+
+    &__title {
+      font-size: 5.2rem;
+    }
+
+    &__desc {
+      font-size: 1.3rem;
+    }
+
+    &__btn {
+      padding: 1.2rem 1.8rem;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+@use "../util" as u;
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__picture {
+    margin-top: 1rem;
+  }
+
+  &__article,
+  &__sponsor {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  &__article {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    // > * {
+    //   border: 1px solid red;
+    // }
+  }
+
+  &__title {
+    font-size: 2.2rem;
+  }
+
+  &__desc {
+    text-align: center;
+    line-height: 1.5;
+    color: u.$mediumgray;
+    font-size: 1rem;
+  }
+
+  &__btn {
+    padding: 1rem 1.5rem;
+    background-color: u.$almostblack;
+    color: u.$almostwhite;
+    border-radius: 1rem;
+    font-weight: 700;
+
+    &:hover {
+      background-color: u.$almostwhite;
+      color: u.$almostblack;
+      border: 1px solid u.$almostblack;
+    }
+  }
+
+  &__sponsor {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1rem;
+    margin-top: 3rem;
+
+    > div {
+      flex: 0 1 25%;
+    }
+  }
+}

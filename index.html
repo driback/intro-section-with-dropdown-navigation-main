@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./app/dist/css/style.min.css" />
+
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="header__logo">
+          <img src="./images/logo.svg" alt="logo" />
+        </div>
+        <div class="header__btn">
+          <img src="./images/icon-menu.svg" alt="btn" />
+        </div>
+        <nav class="header__nav">
+          <img
+            src="./images/icon-close-menu.svg"
+            alt="btn"
+            class="header__closebtn"
+          />
+          <ul class="header__links">
+            <li class="features">
+              <a href="#">Features</a>
+              <div class=".arrow-fea">
+                <img src="./images/icon-arrow-down.svg" alt="arrow" />
+              </div>
+
+              <ul class="features-link">
+                <li>
+                  <img src="./images/icon-todo.svg" alt="icon" /><a href=""
+                    >Todo List</a
+                  >
+                </li>
+                <li>
+                  <img src="./images/icon-calendar.svg" alt="icon" /><a href=""
+                    >Calender</a
+                  >
+                </li>
+                <li>
+                  <img src="./images/icon-reminders.svg" alt="icon" /><a href=""
+                    >Reminders</a
+                  >
+                </li>
+                <li>
+                  <img src="./images/icon-planning.svg" alt="icon" /><a href=""
+                    >Planning</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="company">
+              <a href="#">Company</a>
+              <div><img src="./images/icon-arrow-down.svg" alt="arrow" /></div>
+
+              <ul class="company-link">
+                <li><a href="">History</a></li>
+                <li><a href="">Our Team</a></li>
+                <li><a href="">Blog</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+          <ul class="header__login">
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Register</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main class="main">
+        <picture class="main__picture">
+          <source
+            srcset="./images/image-hero-desktop.png"
+            media="(min-width: 1200px)"
+          />
+          <img src="./images/image-hero-mobile.png" alt="hero" />
+        </picture>
+        <article class="main__article">
+          <h1 class="main__title">Make remote work</h1>
+          <p class="main__desc">
+            Get your team in sync, no matter your location. Streamline
+            processes, create team rituals, and watch productivity soar.
+          </p>
+          <a href="#" class="main__btn">Learn more</a>
+        </article>
+        <div class="main__sponsor">
+          <div><img src="./images/client-databiz.svg" alt="sponsor" /></div>
+          <div><img src="./images/client-audiophile.svg" alt="sponsor" /></div>
+          <div><img src="./images/client-meet.svg" alt="sponsor" /></div>
+          <div><img src="./images/client-maker.svg" alt="sponsor" /></div>
+        </div>
+      </main>
+      <div class="black"></div>
+    </div>
+  </body>
+</html>
+<script>
+  const btn = document.querySelector(".header__btn");
+  const btnClose = document.querySelector(".header__closebtn");
+  const blackBg = document.querySelector(".black");
+  const nav = document.querySelector(".header__nav");
+  const features = document.querySelector(".features");
+  const company = document.querySelector(".company");
+  const featuresLink = document.querySelector(".features-link");
+  const companyLink = document.querySelector(".company-link");
+
+  //desktop
+
+  //mobile
+  btn.addEventListener("click", () => {
+    nav.style.transform = "translateX(0%)";
+    blackBg.style.transform = "translateX(0%)";
+    blackBg.style.opacity = 1;
+  });
+
+  btnClose.addEventListener("click", () => {
+    nav.style.transform = "translateX(100%)";
+    blackBg.style.transform = "translateX(100%)";
+    blackBg.style.opacity = 0;
+    featuresLink.classList.remove("active");
+    companyLink.classList.remove("active");
+  });
+
+  if (window.innerWidth > 1200) {
+    features.addEventListener("click", () => {
+      if (!featuresLink.classList.contains("actived")) {
+        featuresLink.classList.add("actived");
+      } else {
+        featuresLink.classList.remove("actived");
+      }
+    });
+
+    company.addEventListener("click", () => {
+      if (!companyLink.classList.contains("actived")) {
+        companyLink.classList.add("actived");
+      } else {
+        companyLink.classList.remove("actived");
+      }
+    });
+  } else if (window.innerWidth < 1200) {
+    features.addEventListener("click", () => {
+      if (!featuresLink.classList.contains("active")) {
+        featuresLink.classList.add("active");
+      } else {
+        featuresLink.classList.remove("active");
+      }
+    });
+
+    company.addEventListener("click", () => {
+      if (!companyLink.classList.contains("active")) {
+        companyLink.classList.add("active");
+      } else {
+        companyLink.classList.remove("active");
+      }
+    });
+  }
+</script>
